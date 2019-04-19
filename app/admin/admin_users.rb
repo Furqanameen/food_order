@@ -35,9 +35,15 @@ ActiveAdmin.register User do
  index download_links: proc{ current_user.can_view_download_links? }
   controller do
    # if you want /admin/pages/12345.pdf
-    def show
+    def index
+      binding.pry
+      @user = User.all
       super do |format|
-         format.pdf { render(pdf: "page.pdf") }
+        format.pdf do
+
+         render :pdf=> "users",  # Excluding ".pdf" extension.
+         template: "admin/order_items/show.html.erb"
+       end
        end
      end
    end
@@ -65,4 +71,3 @@ ActiveAdmin.register Stor do
   permit_params :name,:email, :address,:phone,:city,
   tags_attributes: [:name,:email,:_destroy]
 end
-

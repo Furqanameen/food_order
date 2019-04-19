@@ -1,2 +1,4 @@
-<h1>page <%#= resource.id %></h1>
-<p><%#= resource.body %></p>
+<h1>page</h1>
+<% @user.each do |user|%>
+  <p><%= user.email %></p>
+<% end %>
