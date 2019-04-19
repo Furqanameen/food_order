@@ -1,0 +1,2 @@
+class Stor < ApplicationRecord
+end
