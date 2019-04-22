@@ -2,5 +2,7 @@
 <% binding.pry%>
 <% @user.each do |user|%>
   <p><%= user.email %></p>
-  <p><%= user.first_name %></p>
+  <% if @user.first_name %>
+    <p><%= user.first_name %></p>
+  <% end %>
 <% end %>

@@ -33,7 +33,7 @@ ActiveAdmin.register User do
   tags_attributes: [:id, :email, :_destroy]
   index download_links: [:pdf]
 
- index download_links: proc{ current_user.can_view_download_links? }
+ # index download_links: proc{ current_user.can_view_download_links? }
   controller do
 
    # if you want /admin/pages/12345.pdf
@@ -42,7 +42,8 @@ ActiveAdmin.register User do
       @user = User.all
       super do |format|
         format.pdf do
-
+          #after this genrate
+          #rails generate wicked_pdf
          render :pdf=> "users",  # Excluding ".pdf" extension.
          template: "admin/order_items/show.html.erb"
        end
