@@ -1,0 +1,38 @@
+<div class="container">
+<center><h1>this is index page is </h1></center>
+<%= flash[:emp] %>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @emp.each do |dtl| %>
+      <td><%= dtl.id %></td>
+      <td><%= dtl.name %></td>
+      <td><%= dtl.email %></td>
+      <td><%= dtl.phone %></td>
+      <td><%= dtl.address %></td>
+      <td><%= dtl.city %></td>
+      <td><%= dtl.country %></td>
+      <td><%= link_to 'Update' ,edit_employee_path(dtl) %></td>
+      <td><%= link_to 'Delete',employee_path(dtl),:method=>"delete" %></td>
+
+    </tr>
+
+      <% end -%>
+    
+  </tbody>
+</table>
+	<%= link_to "go to create", new_employee_path %>
+</div>

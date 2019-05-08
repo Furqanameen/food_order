@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>this is edite fiile </h1>
+	
+	<%= form_for @emp ,url: employee_path(@emp) do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+<%= f.label :email %><br>
+<%= f.email_field :email %><br>
+<%= f.label :phone %><br>
+<%= f.text_field :phone %><br>
+
+<%= f.label :address %><br>
+<%= f.text_field :address %><br>
+<%= f.label :city %><br>
+<%= f.text_field :city %><br>
+<%= f.label :country %><br>
+<%= f.text_field :country %><br>
+<%= f.submit   %>
+<% end %>
+<center>
+<%= link_to "Display data", employee_index_path %><br>
+	<%= link_to "go to create", new_employee_path %>
+</div>

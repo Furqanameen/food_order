@@ -45,7 +45,7 @@ ActiveAdmin.register User do
           #after this genrate
           #rails generate wicked_pdf
          render :pdf=> "users",  # Excluding ".pdf" extension.
-         template: "admin/order_items/show.html.erb"
+         template: "admin/order_items/showpdf.html.erb"
        end
        end
      end
